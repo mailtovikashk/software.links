@@ -1,107 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=1920"/>
+    <meta name="description"
+          content="Tizen Download API Demo" />
 
-        <title>Try Everything</title>
-    </head>
-    <style>
-        body{
-            background-color: rgb(17, 12, 12);
-        }
-    </style>
-    <body>
+    <title>Tizen Download API</title>
 
-         <!-- HEADER SECTION -->
-         <header class="l-header"  style="background-color: rgb(135, 235, 104);">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="img/trial.png" class="nav__logo">Try Everything</a>
-                </div>
+    <script type='text/javascript' src='$WEBAPIS/webapis/webapis.js'></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
-                <div class="nav__menu" id="nav-menu" >
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#Videos" class="nav__link">Videos</a></li>
-                    </ul>
-                </div>
+</head>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
+<body>
 
-        <main class="l-main">
-            <!--===== HOME SECTION =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title" style="color: aliceblue;"><br>I'am <span class="home__title-color">Galvan</span><br>Founder of Try Everything</h1>
-                    <a href="https://www.youtube.com/channel/UCfKFSShUEX0YRhh__wTwtgg?sub_confirmation=1" class="button">Subscribe</a>
-                </div>
-                <div class="home__social">
-                    <a href="https://www.youtube.com/channel/UCfKFSShUEX0YRhh__wTwtgg?sub_confirmation=1" class="home__social-icon" style="color: rgb(40, 226, 33);"><i class='bx bxl-youtube'></i></a>
-                    <a href="https://www.youtube.com/channel/UCfKFSShUEX0YRhh__wTwtgg?sub_confirmation=1" class="home__social-icon" style="color: rgb(40, 226, 33);"><i class='bx bxl-instagram' ></i></a>
-                    <a href="https://www.youtube.com/channel/UCfKFSShUEX0YRhh__wTwtgg?sub_confirmation=1" class="home__social-icon" style="color: rgb(40, 226, 33);"><i class='bx bxl-github' ></i></a>
-                </div>
-            </section>
+    <h1>Tizen Download API</h1>
 
-            <!--===== ABOUT SECTION =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
+    <div class="left">
+        <h2>Available buttons/actions:</h2>
 
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="img/trial.png" alt="">
-                    </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle" style="color: aquamarine;font-size:xx-large">Try Everything</h2>
-                        <p class="about__text" style="color: aliceblue;">Here's a youtube channel where I try different different things and stuffs and make videos and give reactions to them.</p>           
-                    </div>                                   
-                </div>
-            </section>
-            
-            <!--===== ACHIVEMENTS SECTION =====-->
-            <section class="work section" id="Videos">
-                <h2 class="section-title">Videos</h2>
+        <div>
+            1 - Downloaded file lists<br>
+            2 - Start download - small file<br>
+            3 - Start download - large file<br>
+            Pause - Pause download<br>
+            Play - Resume download<br>
+            Stop - Cancel download<br>
+            0 - Clear logs
+        </div>
 
-                <div class="work__container bd-grid">
-                    <div class="work__img">
-                        <img src="img/1.png" alt="">
-                    </div>
-                    <div class="work__img">
-                        <img src="img/1.png" alt="">
-                    </div>
-                    <div class="work__img">
-                        <img src="img/1.png" alt="">
-                    </div>
-                    <div class="work__img">
-                        <img src="img/1.png" alt="">
-                    </div>
-                    <div class="work__img">
-                        <img src="img/1.png" alt="">
-                    </div>
-                    <div class="work__img">
-                        <img src="img/1.png" alt="">
-                    </div>
-                </div>
-            </section>
-        </main>
+        <div id="progress" class="progress">
+            <div id="bar" class="bar"></div>
+        </div>
 
-        <!--===== FOOTER SECTION =====-->
-        <footer class="footer">
-            <p class="footer__title">Try Everything</p>
-            <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-youtube' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-github' ></i></a>
-            </div>
-            <p>&#169;galvanmoto</p>
-        </footer>
-    </body>
+        <fieldset>
+            <legend>Downloaded files:</legend>
+            <div id="fileList" class="logs"></div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Logs</legend>
+            <div id="logs" class="logs"></div>
+        </fieldset>
+    </div>
+    <div class="right">
+        <h2>Info</h2>
+
+        <p>This application demonstrates the usage of Tizen download API</p>
+
+        <p>The application downloads files from <code>http://techslides.com</code> and <code>http://download.blender.org</code>. If these domains are not accessible it will not work.<br>
+
+            You can change the source location of files to download by changing the contents of <code>url1</code> and <code>url2</code> variables in <code>main.js</code> file</cide></p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
 </html>
